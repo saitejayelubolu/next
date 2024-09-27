@@ -1,4 +1,4 @@
-// components/Header.tsx
+// Update components/Header.tsx
 import Link from "next/link";
 import React from "react";
 
@@ -6,15 +6,31 @@ const Header: React.FC = () => {
   return (
     <header>
       <nav>
-        <ul>
+        <ul className="flex space-x-4">
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" className="text-white">
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/about" className="text-white">
+              About
+            </Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact" className="text-white">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link href="/notes/create" className="text-white">
+              Create Note
+            </Link>
+          </li>
+          <li>
+            <Link href="/notes/show" className="text-white">
+              Show Notes
+            </Link>
           </li>
         </ul>
       </nav>
