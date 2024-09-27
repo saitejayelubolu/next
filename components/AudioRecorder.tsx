@@ -63,9 +63,9 @@ const AudioRecorder: React.FC = () => {
           <h3>Recording Preview:</h3>
           <audio controls src={audioURL} className="w-full" />
           <p>File Size: {audioSize ? (audioSize / 1024).toFixed(2) : 0} KB</p>
-          {/* <Button onClick={uploadAudio} className="bg-green-500">
+          <Button onClick={uploadAudio} className="bg-green-500">
             Upload Audio
-          </Button> */}
+          </Button>
         </div>
       )}
     </div>
