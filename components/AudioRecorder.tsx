@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const AudioRecorder: React.FC = () => {
   const [isRecording, setIsRecording] = useState(false);
-  const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
+  // const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
   const [audioURL, setAudioURL] = useState<string | null>(null);
   const [audioSize, setAudioSize] = useState<number | null>(null);
 
@@ -23,7 +23,7 @@ const AudioRecorder: React.FC = () => {
 
     mediaRecorder.onstop = () => {
       const blob = new Blob(chunks.current, { type: "audio/wav" });
-      setAudioBlob(blob);
+      // setAudioBlob(blob);
       setAudioURL(URL.createObjectURL(blob));
       setAudioSize(blob.size);
       chunks.current = [];
@@ -37,14 +37,14 @@ const AudioRecorder: React.FC = () => {
     mediaRecorderRef.current?.stop();
   };
 
-  const uploadAudio = () => {
-    if (audioBlob) {
-      const formData = new FormData();
-      formData.append("file", audioBlob, "recording.wav");
-      // Perform your upload logic here (e.g., send to server using fetch or axios)
-      console.log("Audio uploaded:", audioBlob);
-    }
-  };
+  // const uploadAudio = () => {
+  //   if (audioBlob) {
+  //     const formData = new FormData();
+  //     formData.append("file", audioBlob, "recording.wav");
+  //     // Perform your upload logic here (e.g., send to server using fetch or axios)
+  //     console.log("Audio uploaded:", audioBlob);
+  //   }
+  // };
 
   return (
     <div className="flex flex-col items-center space-y-4">
@@ -63,9 +63,9 @@ const AudioRecorder: React.FC = () => {
           <h3>Recording Preview:</h3>
           <audio controls src={audioURL} className="w-full" />
           <p>File Size: {audioSize ? (audioSize / 1024).toFixed(2) : 0} KB</p>
-          <Button onClick={uploadAudio} className="bg-green-500">
+          {/* <Button onClick={uploadAudio} className="bg-green-500">
             Upload Audio
-          </Button>
+          </Button> */}
         </div>
       )}
     </div>
