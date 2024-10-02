@@ -1,6 +1,8 @@
-// pages/notes/show.tsx
+// app/notes/show/page.tsx
+"use client"; // Mark this component as a Client Component
+
 import React, { useEffect, useState } from "react";
-import Layout from "../../components/Layout";
+// import Layout from "../../components/Layout";
 
 const ShowNotesPage: React.FC = () => {
   const [notesList, setNotesList] = useState<string[]>([]);
@@ -12,7 +14,7 @@ const ShowNotesPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout>
+    <section>
       <div className="container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Your Notes</h1>
         {notesList.length === 0 ? (
@@ -27,7 +29,7 @@ const ShowNotesPage: React.FC = () => {
           </ul>
         )}
       </div>
-    </Layout>
+    </section>
   );
 };
 

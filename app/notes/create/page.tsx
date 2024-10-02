@@ -1,9 +1,10 @@
-// pages/notes/create.tsx
-import React, { useState } from "react";
-import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
+// app/notes/create/page.tsx
+"use client"; // Mark this component as a Client Component
 
-const CreateNotePage: React.FC = () => {
+import React, { useState } from "react";
+import { useRouter } from "next/navigation"; // Update this import
+
+const Create: React.FC = () => {
   const [note, setNote] = useState("");
   const router = useRouter();
 
@@ -20,7 +21,7 @@ const CreateNotePage: React.FC = () => {
   };
 
   return (
-    <Layout>
+    <section>
       <div className="container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Create a Note</h1>
         <form onSubmit={handleNoteSubmit} className="flex flex-col space-y-4">
@@ -40,8 +41,8 @@ const CreateNotePage: React.FC = () => {
           </button>
         </form>
       </div>
-    </Layout>
+    </section>
   );
 };
 
-export default CreateNotePage;
+export default Create;
